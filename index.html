@@ -58,7 +58,7 @@
                             <div class="card-block">
                                 <h4 class="card-title">{{author}}</h4>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Books</a>
+                                <a href="#" class="btn btn-primary" ng-model="showMe" ng-click="hide()">Books</a>
                             </div>
                         </div>
                     </div>
@@ -66,7 +66,7 @@
             </div>
 
             <!-- display books -->
-            <div class="container">
+            <div class="container" ng-if="showMe">
                 <div class="jumbotron" ng-repeat="book in books | orderBy: 'title'">
                     <div class="media">
                         <div class="media-heading">

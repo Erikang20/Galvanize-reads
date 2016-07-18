@@ -22,7 +22,10 @@ app.controller( 'control', function( $scope ) {
 			comments: ''
     }
 
-
 ];
 
+	$scope.hide = function() {
+		$scope.showMe = !$scope.showMe;
+		console.log( "hiding" );
+	}
 } );
