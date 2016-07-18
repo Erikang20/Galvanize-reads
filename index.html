@@ -57,7 +57,7 @@
                             <img class="card-img-top" src="http://az616578.vo.msecnd.net/files/2016/05/16/635990089599038074-2122984680_books.jpg" alt="Card image cap">
                             <div class="card-block">
                                 <h1 class="card-title">{{author}}</h1>
-                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <p class="card-text">Looking for your favorite Book? Welcome to a whole new world!</p>
                                 <a href="#" class="btn btn-primary" ng-model="showMe" ng-click="hide()">Books</a>
                             </div>
                         </div>
@@ -88,6 +88,9 @@
                             </div>
                         </div>
                     </div>
+
+                    <!-- button add new book -->
+                    <button ng-click="">New Book</button>
                 </div>
             </div>
 
@@ -117,6 +120,35 @@
                 </div>
 
             </div>
+
+            <!-- add books -->
+            <form name="newBook" ng-if="showMe" class="my-form" ng-hide="newBook.$submitted" novalidate>
+
+                <div class="form-group">
+                    <label for="title">Title: </label>
+                    <span class="error" ng-show="userForm.title.$error.minlength" ng-class="{'has-error': userForm.title.$invalid && !userForm.title.$pristine, 'has-success': userForm.title.$valid}">A Title is Required to be at least 3 characters</span>
+                    <input type="text" class="form-control" name="title" id="title" ng-model="book.title" ng-minlength="3" placeholder="Title" required>
+
+                    <label for="author">Author</label>
+                    <span class="error" ng-show="userForm.author.$error.required.$touched">An author is Required </span>
+                    <input type="text" class="form-control" name="author" id="author" ng-model="book.author" placeholder="Author" required>
+
+                    <label for="img">Image Url</label>
+                    <span class="error" ng-show="userForm.img.$error.required.$touched ">Please introduce a valid URL </span>
+                    <input type="url" class="form-control" name="img" id="img" ng-model="book.img" placeholder="Image Url" required>
+
+
+                    <label for="description">Description</label>
+                    <input type="text" class="form-control" name="description" id="description" ng-model="book.description" ng-minlength="3" ng-maxlength="200" placeholder="Description" required>
+                    <span class="error" ng-show="userForm.description.$error.required.$touched">A description is Required </span>
+                    <span class="error" ng-show="userForm.description.$error.minlength">A description has to be at least 3 characters </span>
+                    <span class="error" ng-show="userForm.description.$error.maxlength">The description can't be longer than 200 characters </span>
+                    <button ng-click="addPost()" class="btn btn-primary" type="submit" ng-disabled="userForm.$pristine">Submit Post</button>
+                </div>
+
+            </form>
+
+
 
 
         </div>

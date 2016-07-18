@@ -3,7 +3,7 @@
   width: auto;
 }
 
-.card-img-top{
+.card-img-top, .img-responsive{
   height: 250px;
   width: auto;
 }

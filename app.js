@@ -30,11 +30,19 @@ app.controller( 'control', function( $scope ) {
 		{
 			id: '',
 			fullName: 'Joanne Rowling',
-			dob: "07/31/1965",
+			dob: "July 31, 1965",
 			country: 'United Kingdom',
 			img: 'http://i.telegraph.co.uk/multimedia/archive/02617/jk_2617100b.jpg',
 			biography: 'Joanne "Jo" Rowling, OBE, FRSL, pen names J. K. Rowling and Robert Galbraith, is a British novelist, screenwriter and film producer best known as the author of the Harry Potter fantasy series.',
-  }
+  },
+		{
+			id: '',
+			fullName: 'Victor Hugo',
+			dob: 'February 26, 1802',
+			Country: 'France',
+			img: 'https://upload.wikimedia.org/wikipedia/commons/e/e6/Victor_Hugo_by_%C3%89tienne_Carjat_1876_-_full.jpg',
+			biography: 'Victor Marie Hugo was a French poet, novelist, and dramatist of the Romantic movement. He is considered one of the greatest and best-known French writers.'
+}
 ];
 
 	$scope.hide = function() {
