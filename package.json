@@ -18,7 +18,12 @@
   },
   "homepage": "https://github.com/Erikang20/Galvanize-reads#readme",
   "dependencies": {
+    "body-parser": "^1.15.2",
+    "ejs": "^2.4.2",
+    "express": "^4.14.0",
+    "jquery": "^3.1.0",
     "knex": "^0.11.7",
+    "method-override": "^2.3.6",
     "pg": "^6.0.2"
   }
 }
