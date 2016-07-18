@@ -39,14 +39,16 @@ app.controller( 'control', function( $scope ) {
 			country: 'United Kingdom',
 			img: 'http://i.telegraph.co.uk/multimedia/archive/02617/jk_2617100b.jpg',
 			biography: 'Joanne "Jo" Rowling, OBE, FRSL, pen names J. K. Rowling and Robert Galbraith, is a British novelist, screenwriter and film producer best known as the author of the Harry Potter fantasy series.',
+			books: 'Harry Potter and the Prisoner of Azkaban, Harry Potter and the Chamber of Secrets',
   },
 		{
 			id: '',
 			fullName: 'Victor Hugo',
 			dob: 'February 26, 1802',
-			Country: 'France',
+			country: 'France',
 			img: 'https://upload.wikimedia.org/wikipedia/commons/e/e6/Victor_Hugo_by_%C3%89tienne_Carjat_1876_-_full.jpg',
-			biography: 'Victor Marie Hugo was a French poet, novelist, and dramatist of the Romantic movement. He is considered one of the greatest and best-known French writers.'
+			biography: 'Victor Marie Hugo was a French poet, novelist, and dramatist of the Romantic movement. He is considered one of the greatest and best-known French writers.',
+			books: 'Les Misérables, The Man who Laughs',
 }
 ];
 
@@ -60,6 +62,13 @@ app.controller( 'control', function( $scope ) {
 		console.log( "show the new button" );
 	}
 
+	$scope.showPerson = function() {
+		$scope.showAuthor = !$scope.showAuthor;
+		console.log( "showing the Author" );
+		// $scope.hide();
+	}
+
+
 	var reset = function() {
 		$scope.library.title = null;
 		$scope.library.author = null;
@@ -71,11 +80,6 @@ app.controller( 'control', function( $scope ) {
 		console.log( "this is clean!" );
 	}
 
-	$scope.showPerson = function() {
-
-		$scope.showAuthor = !$scope.showAuthor;
-		console.log( "showing the Author" );
-	}
 
 	$scope.addBook = function() {
 		var newBook = {};

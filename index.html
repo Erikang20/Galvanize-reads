@@ -63,10 +63,7 @@
                 </div>
                 <!-- button add new book -->
                 <button class="pull-right btn btn-success" ng-if="showMe" ng-click="hideMe()" role="button">New Book</button>
-
             </div>
-
-
 
 
             <!-- add books -->
@@ -99,8 +96,6 @@
 
             <!-- display books -->
             <div class="container" ng-if="showMe">
-
-
                 <div class="jumbotron" ng-repeat="book in books | orderBy: 'title'">
                     <div class="media">
                         <div class="media-heading">
@@ -122,28 +117,32 @@
                             </div>
                         </div>
                     </div>
-
-
                 </div>
             </div>
 
-            <div class="container" ng-if="showAuthor">
+            <!-- display authors -->
+            <div class="container" ng-if="showAuthor" ng-show="showAuthor">
                 <div class="jumbotron" ng-repeat="author in authors | orderBy:'fullName'">
                     <div class="media">
                         <div class="media-heading">
                             <h1><div class="fullName "><span>{{author.fullName}} </span></div></h1>
 
-                            <button class="pull-right"> Delete</button>
-                            <button class="pull-right"> Edit</button>
+                            <button class="pull-right btn btn-danger"> Delete</button>
+                            <button class="pull-right btn btn-info"> Edit</button>
 
                             <div><img class="img-responsive media-object media-left" ng-src="{{author.img}}" alt=""></div>
 
                             <div class="media-body">
                                 <div>
                                     <div><span><strong>Born:</strong> {{author.dob}} </span></div>
+                                    <br>
+                                    <span><strong>Books:</strong> {{author.books}}</span>
+                                    <br>
                                     <div><span><strong>Country:</strong> {{author.country}} </span></div>
-
+                                    <br>
                                     <span>{{author.biography}}</span>
+
+
                                 </div>
 
                             </div>
