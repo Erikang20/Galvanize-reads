@@ -23,7 +23,7 @@
     </head>
 
     <body>
-        <div ng-controller="books as library">
+        <div ng-controller="control as library">
             <header>
                 <nav class="navbar navbar-default">
                     <div class="container-fluid">
@@ -39,28 +39,55 @@
             </header>
 
             <div class="container">
+
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card">
                             <img class="card-img-top" data-src="..." alt="Card image cap">
                             <div class="card-block">
-                                <h4 class="card-title">Books</h4>
+                                <h4 class="card-title">{{book}}</h4>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 <a href="#" class="btn btn-primary">Authors</a>
                             </div>
                         </div>
                     </div>
+
                     <div class="col-md-6">
                         <div class="card">
                             <img class="card-img-top" data-src="..." alt="Card image cap">
                             <div class="card-block">
-                                <h4 class="card-title">Person</h4>
+                                <h4 class="card-title">{{author}}</h4>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 <a href="#" class="btn btn-primary">Books</a>
                             </div>
                         </div>
                     </div>
                 </div>
+            </div>
+
+            <!-- display books -->
+            <div class="container">
+                <div class="jumbotron" ng-repeat="book in books | orderBy: 'title'">
+                    <div class="media">
+                        <div class="media-heading">
+                            <h3><div class="title "><span>{{book.title}}</span></div></h3>
+                            <div><span class="pull-right">Author: {{book.author}}</span></div>
+                            <div><img class="img-responsive media-object media-left" ng-src="{{book.img}}" alt=""></div>
+
+                            <div class="media-body">
+                                <div>
+                                    <span>{{book.description}}</span>
+                                </div>
+                                <span><strong>Comments:</strong> {{book.comments}}</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
             </div>
 
 
