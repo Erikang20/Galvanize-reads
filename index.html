@@ -3,6 +3,8 @@
 
     <head>
         <meta charset="utf-8">
+        <!-- movile friendly -->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Books and Authors</title>
         <!-- angularjs -->
         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
@@ -23,11 +25,43 @@
     <body>
         <div ng-controller="books as library">
             <header>
-                <nav>
-                    <a class="navbar-brand" href="#">Galvanize Reads</a>
+                <nav class="navbar navbar-default">
+                    <div class="container-fluid">
+                        <div class="navbar-header">
+                            <a class="navbar-brand" href="#">
+                                <img class="brand-img" alt="brand" src="./img/Galvanizelogo.jpeg">
+                            </a>
+                            <p class="navbar-text">Galvanize Reads</p>
+
+                        </div>
+                    </div>
                 </nav>
             </header>
-            <h1>Testing</h1>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="card">
+                            <img class="card-img-top" data-src="..." alt="Card image cap">
+                            <div class="card-block">
+                                <h4 class="card-title">Books</h4>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Authors</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card">
+                            <img class="card-img-top" data-src="..." alt="Card image cap">
+                            <div class="card-block">
+                                <h4 class="card-title">Person</h4>
+                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                <a href="#" class="btn btn-primary">Books</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
 
         </div>
