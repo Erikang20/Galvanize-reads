@@ -5,6 +5,7 @@ app.controller( 'control', function( $scope ) {
 
 	$scope.books = [
 		{
+			id: '1',
 			title: 'Harry Potter and the Prisoner of Azkaban',
 			author: 'J. K. Rowling',
 			img: 'http://t3.gstatic.com/images?q=tbn:ANd9GcQpMUwSXKMjy_ftHrMtOAWMFiAZNaIHuRZK8t0m5DolqCy6MzI2',
@@ -14,6 +15,7 @@ app.controller( 'control', function( $scope ) {
 
       },
 		{
+			id: '2',
 			title: 'Les Misérables',
 			author: 'Victor Hugo',
 			img: 'http://t2.gstatic.com/images?q=tbn:ANd9GcS8cnJAWyJjyDy3WBZ8of0AdmVTsLdGLN6WoKqTf-u4WTQ-Vfqe',
@@ -24,8 +26,23 @@ app.controller( 'control', function( $scope ) {
 
 ];
 
+	$scope.authors = [
+		{
+			id: '',
+			fullName: 'Joanne Rowling',
+			dob: "07/31/1965",
+			img: 'http://i.telegraph.co.uk/multimedia/archive/02617/jk_2617100b.jpg',
+			biography: 'Joanne "Jo" Rowling, OBE, FRSL, pen names J. K. Rowling and Robert Galbraith, is a British novelist, screenwriter and film producer best known as the author of the Harry Potter fantasy series.',
+  }
+];
+
 	$scope.hide = function() {
 		$scope.showMe = !$scope.showMe;
 		console.log( "hiding" );
+	}
+
+	$scope.showPerson = function() {
+		$scope.showAuthor = !$scope.showAuthor;
+		console.log( "showing the Author" );
 	}
 } );

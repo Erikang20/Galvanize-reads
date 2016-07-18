@@ -43,20 +43,20 @@
                 <div class="row">
                     <div class="col-md-6">
                         <div class="card">
-                            <img class="card-img-top" data-src="..." alt="Card image cap">
+                            <img class="card-img-top" src="http://milestoneseducation.com/wp-content/uploads/2016/06/Books-bookshelf-person-head-540w.jpg" alt="Card image cap">
                             <div class="card-block">
-                                <h4 class="card-title">{{book}}</h4>
+                                <h1 class="card-title">{{book}}</h1>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                                <a href="#" class="btn btn-primary">Authors</a>
+                                <a href="#" class="btn btn-primary" ng-model="showAuthor" ng-click="showPerson()">Authors</a>
                             </div>
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="card">
-                            <img class="card-img-top" data-src="..." alt="Card image cap">
+                            <img class="card-img-top" src="http://az616578.vo.msecnd.net/files/2016/05/16/635990089599038074-2122984680_books.jpg" alt="Card image cap">
                             <div class="card-block">
-                                <h4 class="card-title">{{author}}</h4>
+                                <h1 class="card-title">{{author}}</h1>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 <a href="#" class="btn btn-primary" ng-model="showMe" ng-click="hide()">Books</a>
                             </div>
@@ -70,8 +70,13 @@
                 <div class="jumbotron" ng-repeat="book in books | orderBy: 'title'">
                     <div class="media">
                         <div class="media-heading">
-                            <h3><div class="title "><span>{{book.title}}</span></div></h3>
-                            <div><span class="pull-right">Author: {{book.author}}</span></div>
+                            <h1><div class="title "><span>{{book.title}} </span></div></h1>
+
+                            <button class="pull-right"> Delete</button>
+                            <button class="pull-right"> Edit</button>
+
+                            <div><span class="pull-right">Author: {{book.author}} </span></div>
+
                             <div><img class="img-responsive media-object media-left" ng-src="{{book.img}}" alt=""></div>
 
                             <div class="media-body">
@@ -81,9 +86,31 @@
                                 <span><strong>Comments:</strong> {{book.comments}}</span>
 
                             </div>
-
                         </div>
+                    </div>
+                </div>
+            </div>
 
+            <div class="container" ng-if="showAuthor">
+                <div class="jumbotron" ng-repeat="author in authors | orderBy:'fullName'">
+                    <div class="media">
+                        <div class="media-heading">
+                            <h1><div class="fullName "><span>Full Name: {{author.fullName}} </span></div></h1>
+
+                            <button class="pull-right"> Delete</button>
+                            <button class="pull-right"> Edit</button>
+
+                            <div><span><strong>Born:</strong> {{author.dob}} </span></div>
+
+                            <div><img class="img-responsive media-object media-left" ng-src="{{author.img}}" alt=""></div>
+
+                            <div class="media-body">
+                                <div>
+                                    <span>{{author.biography}}</span>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
 
                 </div>
