@@ -1,0 +1,24 @@
+{
+  "name": "g-24-assign",
+  "version": "1.0.0",
+  "description": "List, Add, Modify and Delete Books.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Erikang20/Galvanize-reads.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Erikang20/Galvanize-reads/issues"
+  },
+  "homepage": "https://github.com/Erikang20/Galvanize-reads#readme",
+  "dependencies": {
+    "knex": "^0.11.7",
+    "pg": "^6.0.2"
+  }
+}
