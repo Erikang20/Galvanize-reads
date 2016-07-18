@@ -2,6 +2,8 @@ var app = angular.module( "library", [ 'ngAnimate' ] );
 
 app.controller( 'control', function( $scope ) {
 	$scope.library = {};
+	$scope.book = [];
+
 
 	$scope.books = [
 		{
@@ -50,8 +52,34 @@ app.controller( 'control', function( $scope ) {
 		console.log( "hiding" );
 	}
 
+	var reset = function() {
+		$scope.library.title = null;
+		$scope.library.author = null;
+		$scope.library.img = null;
+		$scope.library.description = null;
+		$scope.library.newBooks = false;
+
+
+		console.log( "this is clean!" );
+	}
+
 	$scope.showPerson = function() {
 		$scope.showAuthor = !$scope.showAuthor;
 		console.log( "showing the Author" );
+	}
+
+	$scope.addBook = function() {
+		var newBook = {};
+		newBook.title = $scope.library.title;
+		newBook.author = $scope.library.author;
+		newBook.img = $scope.library.img;
+		newBook.description = $scope.library.description;
+
+		$scope.hide();
+
+		$scope.book.push( newBook );
+		console.log( "add a new book here!" );
+
+		reset();
 	}
 } );

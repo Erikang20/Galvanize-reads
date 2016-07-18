@@ -45,7 +45,6 @@
                         <div class="card">
                             <img class="card-img-top" src="http://milestoneseducation.com/wp-content/uploads/2016/06/Books-bookshelf-person-head-540w.jpg" alt="Card image cap">
                             <div class="card-block">
-                                <h1 class="card-title">{{book}}</h1>
                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 <a href="#" class="btn btn-primary" ng-model="showAuthor" ng-click="showPerson()">Authors</a>
                             </div>
@@ -56,7 +55,6 @@
                         <div class="card">
                             <img class="card-img-top" src="http://az616578.vo.msecnd.net/files/2016/05/16/635990089599038074-2122984680_books.jpg" alt="Card image cap">
                             <div class="card-block">
-                                <h1 class="card-title">{{author}}</h1>
                                 <p class="card-text">Looking for your favorite Book? Welcome to a whole new world!</p>
                                 <a href="#" class="btn btn-primary" ng-model="showMe" ng-click="hide()">Books</a>
                             </div>
@@ -122,7 +120,7 @@
             </div>
 
             <!-- add books -->
-            <form name="newBook" ng-if="showMe" class="my-form" ng-hide="newBook.$submitted" novalidate>
+            <form name="newBooks" ng-if="showMe" class="my-form" ng-hide="newBook.$submitted" novalidate>
 
                 <div class="form-group">
                     <label for="title">Title: </label>
@@ -143,7 +141,7 @@
                     <span class="error" ng-show="userForm.description.$error.required.$touched">A description is Required </span>
                     <span class="error" ng-show="userForm.description.$error.minlength">A description has to be at least 3 characters </span>
                     <span class="error" ng-show="userForm.description.$error.maxlength">The description can't be longer than 200 characters </span>
-                    <button ng-click="addPost()" class="btn btn-primary" type="submit" ng-disabled="userForm.$pristine">Submit Post</button>
+                    <button ng-click="addBook()" class="btn btn-primary" type="submit" ng-disabled="newBooks.$pristine">Submit Post</button>
                 </div>
 
             </form>
