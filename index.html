@@ -63,8 +63,13 @@
                 </div>
             </div>
 
+
+            <!-- button add new book -->
+            <button class="pull-right" ng-if="showMe" ng-click="hideMe()" role="button">New Book</button>
+
+
             <!-- add books -->
-            <form name="newBooks" ng-if="showMe" class="my-form" ng-hide="newBooks.$submitted" novalidate>
+            <form name="newBooks" ng-if="hideForm" class="my-form" ng-hide="newBooks.$submitted" novalidate>
 
                 <div class="form-group">
                     <label for="title">Title: </label>
@@ -94,8 +99,6 @@
             <!-- display books -->
             <div class="container" ng-if="showMe">
 
-                <!-- button add new book -->
-                <button class="pull-right" ng-model="showMe" ng-click="addBook()" role="button">New Book</button>
 
                 <div class="jumbotron" ng-repeat="book in books | orderBy: 'title'">
                     <div class="media">

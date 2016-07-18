@@ -55,6 +55,11 @@ app.controller( 'control', function( $scope ) {
 		console.log( "hiding" );
 	}
 
+	$scope.hideMe = function() {
+		$scope.hideForm = !$scope.hideForm;
+		console.log( "show the new button" );
+	}
+
 	var reset = function() {
 		$scope.library.title = null;
 		$scope.library.author = null;
@@ -67,6 +72,7 @@ app.controller( 'control', function( $scope ) {
 	}
 
 	$scope.showPerson = function() {
+
 		$scope.showAuthor = !$scope.showAuthor;
 		console.log( "showing the Author" );
 	}
@@ -83,6 +89,6 @@ app.controller( 'control', function( $scope ) {
 		$scope.books.push( newBook );
 		console.log( "add a new book here!" );
 
-		// reset();
+		reset();
 	}
 } );
