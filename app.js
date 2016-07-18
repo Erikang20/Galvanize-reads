@@ -31,6 +31,7 @@ app.controller( 'control', function( $scope ) {
 			id: '',
 			fullName: 'Joanne Rowling',
 			dob: "07/31/1965",
+			country: 'United Kingdom',
 			img: 'http://i.telegraph.co.uk/multimedia/archive/02617/jk_2617100b.jpg',
 			biography: 'Joanne "Jo" Rowling, OBE, FRSL, pen names J. K. Rowling and Robert Galbraith, is a British novelist, screenwriter and film producer best known as the author of the Harry Potter fantasy series.',
   }

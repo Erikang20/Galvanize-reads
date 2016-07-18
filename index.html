@@ -95,17 +95,18 @@
                 <div class="jumbotron" ng-repeat="author in authors | orderBy:'fullName'">
                     <div class="media">
                         <div class="media-heading">
-                            <h1><div class="fullName "><span>Full Name: {{author.fullName}} </span></div></h1>
+                            <h1><div class="fullName "><span>{{author.fullName}} </span></div></h1>
 
                             <button class="pull-right"> Delete</button>
                             <button class="pull-right"> Edit</button>
-
-                            <div><span><strong>Born:</strong> {{author.dob}} </span></div>
 
                             <div><img class="img-responsive media-object media-left" ng-src="{{author.img}}" alt=""></div>
 
                             <div class="media-body">
                                 <div>
+                                    <div><span><strong>Born:</strong> {{author.dob}} </span></div>
+                                    <div><span><strong>Country:</strong> {{author.country}} </span></div>
+
                                     <span>{{author.biography}}</span>
                                 </div>
 
