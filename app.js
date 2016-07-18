@@ -3,6 +3,9 @@ var app = angular.module( "library", [ 'ngAnimate' ] );
 app.controller( 'control', function( $scope ) {
 	$scope.library = {};
 	$scope.book = [];
+	$scope.books = [];
+	$scope.reverse = true;
+
 
 
 	$scope.books = [
@@ -70,16 +73,16 @@ app.controller( 'control', function( $scope ) {
 
 	$scope.addBook = function() {
 		var newBook = {};
-		newBook.title = $scope.library.title;
-		newBook.author = $scope.library.author;
-		newBook.img = $scope.library.img;
-		newBook.description = $scope.library.description;
+		newBook.title = $scope.book.title;
+		newBook.author = $scope.book.author;
+		newBook.img = $scope.book.img;
+		newBook.description = $scope.book.description;
 
-		$scope.hide();
+		// $scope.hide();
 
-		$scope.book.push( newBook );
+		$scope.books.push( newBook );
 		console.log( "add a new book here!" );
 
-		reset();
+		// reset();
 	}
 } );

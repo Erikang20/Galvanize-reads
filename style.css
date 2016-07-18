@@ -7,3 +7,8 @@
   height: 250px;
   width: auto;
 }
+
+.btn{
+  padding: 8px;
+  margin: 8px;
+}
