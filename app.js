@@ -1,5 +1,6 @@
 var express = require( 'express' );
 var knex = require( 'knex' );
+var bookshelf = require( 'bookshelf' )( knex );
 var pg = require( 'pg' );
 var path = require( 'path' );
 var methodOverride = require( 'method-override' );

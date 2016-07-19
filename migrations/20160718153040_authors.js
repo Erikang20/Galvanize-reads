@@ -7,9 +7,6 @@ exports.up = function( knex, Promise ) {
 		table.string( 'country' );
 		table.string( 'img' ).defaultTo( '' );
 		table.text( 'biography' );
-		table.integer( 'book_id' );
-
-		// table.integer( 'booksId' ).unsigned().index().references( 'id' ).inTable( 'books' ).onDelete( 'CASCADE' );
 	} );
 
 };
