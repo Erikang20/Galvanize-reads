@@ -5,36 +5,31 @@ var methodOverride = require( 'method-override' );
 var bodyParser = require( 'body-parser' );
 
 
-
-router.get( '/', function( req, res, next ) {
-	knex( 'books' ).select().then( function( result, err ) {
-		res.render( 'index' )
-
-	} );
-} );
-
-
-router.post( '/books', function( req, res ) {
-	var book = req.body;
-	knex( 'books' ).insert( {
-		title: book.title,
-		// author: book.author,
-		img: book.img,
-		genre: book.genre,
-		description: book.description,
-		comments: book.comments
-	} ).then( function( result, err ) {
-		res.redirect( '/' );
-	} );
-} );
-
-// ====================================
-////Add a new book////
-// ====================================
-
-router.get( '/new', function( req, res ) {
+router.get( '/', function( req, res ) {
 	res.render( 'books' );
 } );
+
+
+router.post( '/', function( req, res ) {
+	var book = req.body;
+	console.log( book );
+	knex( 'books' ).insert( {
+		title: req.title,
+		// author: req.author,
+		img: req.img,
+		genre: req.genre,
+		description: req.description,
+		comments: req.comments
+	} ).then( function( result, err ) {
+		res.render( 'books' );
+	} );
+} );
+
+// router.get( '/', function( req, res, next ) {
+// 	knex( 'books' ).select().then( function( result, err ) {
+// 		res.render( 'books' )
+// 	} )
+// } );
 
 
 

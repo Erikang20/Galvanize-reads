@@ -34,7 +34,7 @@
 
 
             <!-- add books -->
-            <form name="newBooks" ng-if="hideForm" class="my-form" action="/" method="POST" ng-hide="newBooks.$submitted" novalidate>
+            <form name="newBooks" ng-if="hideForm" class="my-form" action="/books" method="POST" ng-hide="newBooks.$submitted" novalidate>
 
                 <div class="form-group">
                     <label for="title">Title: </label>
@@ -63,7 +63,7 @@
                     <label for="comments">Comments </label>
                     <input type="text" class="form-control" name="comments" id="comments" ng-model="book.comments" placeholder="Comments" required>
 
-                    <form action="/">
+                    <form action="/books" method="POST">
 
                     <button ng-click="addBook()" class="btn btn-primary" type="submit" ng-disabled="newBooks.$pristine">Submit Post</button>
                   </form>
