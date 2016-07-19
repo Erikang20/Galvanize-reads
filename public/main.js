@@ -108,10 +108,10 @@ app.controller( 'control', function( $scope ) {
 		newBook.description = $scope.book.description;
 
 		// $scope.hide();
+		reset();
 
 		$scope.books.push( newBook );
 		console.log( "add a new book here!" );
 
-		reset();
 	}
 } );

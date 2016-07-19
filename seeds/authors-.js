@@ -1,6 +1,6 @@
 exports.seed = function( knex, Promise ) {
 	// Deletes ALL existing entries
-	return knex( 'book_author' ).del()
+	return knex( 'book_authors' ).del()
 		.then( function() {
 			return knex( 'authors' ).del()
 		} )
