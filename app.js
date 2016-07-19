@@ -5,7 +5,9 @@ var pg = require( 'pg' );
 var path = require( 'path' );
 var methodOverride = require( 'method-override' );
 var bodyParser = require( 'body-parser' );
-var routes = require( './routes/index' )
+var routes = require( './routes/index' );
+var books = require( './routes/books' );
+var authors = require( './routes/authors' );
 var app = express();
 
 
@@ -22,6 +24,8 @@ app.use( methodOverride( '_method' ) );
 
 
 app.use( '/', routes );
+app.use( '/books', books );
+app.use( '/authors', authors );
 
 
 

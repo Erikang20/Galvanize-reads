@@ -14,7 +14,7 @@ router.get( '/', function( req, res, next ) {
 } );
 
 
-router.post( '/', function( req, res ) {
+router.post( '/books', function( req, res ) {
 	var book = req.body;
 	knex( 'books' ).insert( {
 		title: book.title,
@@ -24,7 +24,7 @@ router.post( '/', function( req, res ) {
 		description: book.description,
 		comments: book.comments
 	} ).then( function( result, err ) {
-		res.redirect( 'books' );
+		res.redirect( '/' );
 	} );
 } );
 
@@ -33,7 +33,7 @@ router.post( '/', function( req, res ) {
 // ====================================
 
 router.get( '/new', function( req, res ) {
-	res.render( 'index' );
+	res.render( 'books' );
 } );
 
 

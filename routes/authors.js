@@ -7,24 +7,24 @@ var bodyParser = require( 'body-parser' );
 
 
 router.get( '/', function( req, res, next ) {
-	knex( 'books' ).select().then( function( result, err ) {
+	knex( 'library' ).select().then( function( result, err ) {
 		res.render( 'index' )
 
 	} );
 } );
 
 
-router.post( '/', function( req, res ) {
+router.post( '/authors', function( req, res ) {
 	var book = req.body;
-	knex( 'books' ).insert( {
-		title: book.title,
-		// author: book.author,
-		img: book.img,
-		genre: book.genre,
-		description: book.description,
-		comments: book.comments
+	knex( 'library' ).insert( {
+		fullName: author.fullName,
+		dob: author.dob,
+		country: author.country,
+		img: author.img,
+		biography: author.biography,
+		// books: author.books
 	} ).then( function( result, err ) {
-		res.redirect( 'books' );
+		res.redirect( '/' );
 	} );
 } );
 
