@@ -1,4 +1,4 @@
-var app = angular.module( "library", [ 'ngAnimate' ] );
+var app = angular.module( "library", [ 'ngAnimate', 'ngResource' ] );
 
 app.controller( 'control', function( $scope ) {
 	$scope.library = {};

@@ -14,5 +14,30 @@ router.get( '/', function( req, res, next ) {
 } );
 
 
+router.post( '/', function( req, res ) {
+	var book = req.body;
+	knex( 'books' ).insert( {
+		title: book.title,
+		author: book.author,
+		img: book.img,
+		genre: book.genre,
+		description: book.description,
+		comments: book.comments
+	} ).then( function( result, err ) {
+		res.redirect( '/' );
+	} );
+} );
+
+// ====================================
+////Add a new book////
+// ====================================
+
+router.get( '/new', function( req, res ) {
+	res.render( 'index' );
+} );
+
+
+
+
 
 module.exports = router;
