@@ -10,30 +10,31 @@ router.get( '/', function( req, res ) {
 
 		books: result
 	} );
-	console.log( result );
+	// console.log( result );
 } );
 
 
 router.post( '/', function( req, res ) {
 	var book = req.body;
 	console.log( book );
-	knex( 'books' ).insert( {
-		title: req.title,
-		// author: req.author,
-		img: req.img,
-		genre: req.genre,
-		description: req.description,
-		comments: req.comments
-	} ).then( function( result, err ) {
-		res.render( 'books' );
-	} );
+	knex( 'books' ).insert( book )
+		.then( function( result, err ) {
+			if ( err ) {
+				console.log( err );
+			} else {
+				console.log( "result:" +
+					result );
+			}
+			res.render( 'books' );
+		} );
+	console.log( "working books here" );
 } );
 
-// router.get( '/', function( req, res, next ) {
-// 	knex( 'books' ).select().then( function( result, err ) {
-// 		res.render( 'books' )
-// 	} )
-// } );
+router.get( '/', function( req, res, next ) {
+	knex( 'books' ).select().then( function( result, err ) {
+		res.render( 'books' )
+	} )
+} );
 
 
 
