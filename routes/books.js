@@ -10,23 +10,28 @@ router.get( '/', function( req, res ) {
 
 		books: result
 	} );
-	// console.log( result );
 } );
 
 
 router.post( '/', function( req, res ) {
 	var book = req.body;
 	console.log( book );
-	knex( 'books' ).insert( book )
-		.then( function( result, err ) {
-			if ( err ) {
-				console.log( err );
-			} else {
-				console.log( "result:" +
-					result );
-			}
-			res.render( 'books' );
-		} );
+	knex( 'books' ).insert( {
+		title: book.title,
+		// author: req.author,
+		img: book.img,
+		genre: book.genre,
+		description: book.description,
+		comments: book.comments
+	} ).then( function( result, err ) {
+		if ( err ) {
+			console.log( err );
+		} else {
+			console.log( "result:" +
+				result );
+		}
+		res.render( 'books' );
+	} );
 	console.log( "working books here" );
 } );
 

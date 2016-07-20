@@ -7,36 +7,35 @@ var bodyParser = require( 'body-parser' );
 
 
 router.get( '/', function( req, res, next ) {
-	knex( 'authors' ).select().then( function( result, err ) {
-		res.render( 'authors', {
-			author: result
-		} )
-
-	} );
+	res.render( 'authors', {
+		authors: result
+	} )
 } );
 
 
-router.post( '/authors', function( req, res ) {
+router.post( '/', function( req, res ) {
 	var author = req.body;
+	console.log( author );
 	knex( 'authors' ).insert( {
-		fullName: req.fullName,
-		dob: req.dob,
-		country: req.country,
-		img: req.img,
-		biography: req.biography,
-		// books: req.books
+		fullName: author.fullName,
+		dob: author.dob,
+		country: author.country,
+		img: author.img,
+		biography: author.biography,
 	} ).then( function( result, err ) {
-		res.render( '/authors' );
+		res.render( 'authors' );
+		console.log( "working with the authors here!!!!" );
 	} );
 } );
 
-// ====================================
-////Add a new book////
-// ====================================
+router.get( '/', function( req, res, next ) {
+	knex( 'authors' ).select().then( function( result, err ) {
+		res.render( 'authors' )
+	} )
+} );
 
-// router.get( '/new', function( req, res ) {
-// 	res.render( 'index' );
-// } );
+
+
 
 
 
