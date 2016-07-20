@@ -1,29 +1,38 @@
 var app = angular.module( "library", [ 'ngAnimate', 'ngResource' ] );
 
-app.controller( 'control', function( $scope ) {
+app.controller( 'control', function ( $scope ) {
 	$scope.library = {};
 	$scope.book = [];
 	$scope.books = [];
+	$scope.author = [];
+	$scope.authors = [];
 	$scope.reverse = true;
 
 
-	$scope.hide = function() {
+	$scope.hide = function () {
 		$scope.showMe = !$scope.showMe;
 		console.log( "hiding" );
 	}
 
-	$scope.hideMe = function() {
-		$scope.hideForm = !$scope.hideForm;
-		console.log( "show the new button" );
+	$scope.hideMe = function () {
+			$scope.hideForm = !$scope.hideForm;
+			console.log( "hideMe function here" );
+		}
+		// ================================================
+
+
+	$scope.showME = function () {
+		$scope.hideME = !$scope.hideME;
+		console.log( "showME function here" );
 	}
 
-	$scope.showPerson = function() {
+	$scope.showPerson = function () {
 		$scope.showAuthor = !$scope.showAuthor;
-		console.log( "showing the Author" );
-		// $scope.hide();
+		console.log( "showPerson function here" );
 	}
 
-	var reset = function() {
+
+	var reset = function () {
 		$scope.library.title = null;
 		$scope.library.author = null;
 		$scope.library.img = null;
@@ -34,7 +43,7 @@ app.controller( 'control', function( $scope ) {
 	}
 
 
-	$scope.addBook = function() {
+	$scope.addBook = function () {
 		var newBook = {};
 		newBook.title = $scope.book.title;
 		newBook.author = $scope.book.author;
@@ -47,6 +56,19 @@ app.controller( 'control', function( $scope ) {
 		$scope.books.push( newBook );
 
 		console.log( "add a new book here!" );
+	}
+
+	$scope.addAuthor = function () {
+		var newAuthor = {};
+		newAuthor.fullName = $scope.author.fullName;
+		newAuthor.dob = $scope.author.dob;
+		newAuthor.country = $scope.author.country;
+		newAuthor.img = $scope.author.img;
+		newAuthor.biography = $scope.author.biography;
+		reset();
+
+		$scope.authors.push( newAuthor );
+		console.log( "new authors here yo!" )
 	}
 
 
