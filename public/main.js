@@ -1,6 +1,6 @@
 var app = angular.module( "library", [ 'ngAnimate', 'ngResource' ] );
 
-app.controller( 'control', function ( $scope ) {
+app.controller( 'control', function ( $scope, $http ) {
 	$scope.library = {};
 	$scope.book = [];
 	$scope.books = [];
