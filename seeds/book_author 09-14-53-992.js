@@ -3,30 +3,30 @@ exports.seed = function( knex, Promise ) {
 
 	// return knex( 'books' ).del()
 	// 	.then( function() {
-	return knex( 'book_author' ).del()
-		// } )
-		.then( function() {
-			console.log( "here here" );
+	// return knex( 'book_author' ).del()
+	// 	// } )
+	// 	.then( function() {
+	console.log( "here here" );
 
-			return Promise.all( [
+	return Promise.all( [
         // Inserts seed entries
         knex( 'book_author' ).insert( {
-					id: 1,
-					book_id: 1,
-					author_id: 1,
-				} ),
+			id: 1,
+			book_id: 1,
+			author_id: 1
+		} ),
         knex( 'book_author' ).insert( {
 
-					id: 2,
-					book_id: 2,
-					author_id: 2,
-				} ),
+			id: 2,
+			book_id: 2,
+			author_id: 2
+		} ),
 
         knex( 'book_author' ).insert( {
-					id: 3,
-					book_id: 3,
-					author_id: 3,
-				} ),
+			id: 3,
+			book_id: 3,
+			author_id: 3
+		} ),
       ] );
-		} );
+	// } );
 };
