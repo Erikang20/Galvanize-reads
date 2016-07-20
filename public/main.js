@@ -71,5 +71,11 @@ app.controller( 'control', function ( $scope, $http ) {
 		console.log( "new authors here yo!" )
 	}
 
+	// $http.get( 'books', {
+	// 	params: {
+	// 		book_id: book.id
+	// 	}
+	// } )
+
 
 } );
