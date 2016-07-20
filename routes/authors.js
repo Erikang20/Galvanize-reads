@@ -6,12 +6,17 @@ var bodyParser = require( 'body-parser' );
 
 
 
+
 router.get( '/', function( req, res, next ) {
 	res.render( 'authors', {
 		authors: result
 	} )
 } );
 
+
+// ===================================================
+// add new author
+// ===================================================
 
 router.post( '/', function( req, res ) {
 	var author = req.body;
@@ -27,6 +32,7 @@ router.post( '/', function( req, res ) {
 		console.log( "working with the authors here!!!!" );
 	} );
 } );
+
 
 router.get( '/', function( req, res, next ) {
 	knex( 'authors' ).select().then( function( result, err ) {

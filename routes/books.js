@@ -7,7 +7,6 @@ var bodyParser = require( 'body-parser' );
 // home page
 router.get( '/', function( req, res ) {
 	res.render( 'books', {
-
 		books: result
 	} );
 } );

@@ -5,7 +5,6 @@ app.controller( 'control', function( $scope ) {
 	$scope.book = [];
 	$scope.books = [];
 	$scope.reverse = true;
-	$scope.moreBooks = [];
 
 
 	$scope.hide = function() {
@@ -40,7 +39,9 @@ app.controller( 'control', function( $scope ) {
 		newBook.title = $scope.book.title;
 		newBook.author = $scope.book.author;
 		newBook.img = $scope.book.img;
+		newBook.genre = $scope.book.genre;
 		newBook.description = $scope.book.description;
+		newBook.comments = $scope.book.comments
 
 		reset();
 		$scope.books.push( newBook );
