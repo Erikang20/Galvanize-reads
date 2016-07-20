@@ -15,7 +15,8 @@
                                 <a href="#" class="btn btn-primary" ng-model="showAuthor" ng-click="showPerson()">Authors</a>
                             </div>
                         </div>
-                        <a href="/authors" class="pull-right btn btn-success" ng-if="showAuthor" ng-click="showPerson()" role="button">New Author</a>
+                        <a href="#" class="pull-right btn btn-success" ng-if="showAuthor" ng-click="showPerson()" role="button"><i class="fa fa-plus-circle" aria-hidden="true"></i> New Author</a>
+                        <a href="/authors" class="pull-right btn btn-info" ng-if="showAuthor"  role="button"><i class="fa fa-users" aria-hidden="true"></i> View Authors</a>
 
                     </div>
 
@@ -29,14 +30,12 @@
                         </div>
                     </div>
                 </div>
-                <!-- button add new book -->
-                <a href="#" class="pull-right btn btn-success" ng-if="showMe" ng-click="hideMe()" role="button">New Book</a>
-                <a href="/books" class="pull-right btn btn-info" ng-if="showMe"  role="button"><i class="fa fa-book" aria-hidden="true"></i> View Books</a>
 
+                <!-- button add new book -->
+                <a href="#" class="pull-right btn btn-success" ng-if="showMe" ng-click="hideMe()" role="button"><i class="fa fa-plus-circle" aria-hidden="true"></i> New Book</a>
+                <a href="/books" class="pull-right btn btn-info" ng-if="showMe"  role="button"><i class="fa fa-book" aria-hidden="true"></i> View Books</a>
             </div>
 
-
-        </div>
 
         <!-- add books -->
         <form name="newBooks" class="my-form" ng-if="hideForm" action="/books" method="POST" ng-hide="newBooks.$submitted" novalidate>
