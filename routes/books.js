@@ -5,14 +5,14 @@ var methodOverride = require( 'method-override' );
 var bodyParser = require( 'body-parser' );
 
 // home page
-router.get( '/', function( req, res ) {
+router.get( '/', function ( req, res ) {
 	res.render( 'books', {
 		books: result
 	} );
 } );
 
 
-router.post( '/', function( req, res ) {
+router.post( '/', function ( req, res ) {
 	var book = req.body;
 	console.log( book );
 	knex( 'books' ).insert( {
@@ -22,7 +22,7 @@ router.post( '/', function( req, res ) {
 		genre: book.genre,
 		description: book.description,
 		comments: book.comments
-	} ).then( function( result, err ) {
+	} ).then( function ( result, err ) {
 		if ( err ) {
 			console.log( err );
 		} else {
@@ -34,12 +34,20 @@ router.post( '/', function( req, res ) {
 	console.log( "working books here" );
 } );
 
-router.get( '/', function( req, res, next ) {
-	knex( 'books' ).select().then( function( result, err ) {
+router.get( '/', function ( req, res, next ) {
+	knex( 'books' ).select().then( function ( result, err ) {
 		res.render( 'books' )
 	} )
-} );
+} )
 
+
+// $scope.save = function () {
+// 	$.ajax( {
+// 		type: 'POST',
+// 		url: "library", ///database here???
+// 		data:"books:{'id': '', + $scope.book.id + "", 'title': '' + $scope.book.title + "", ''}"
+// 	} )
+// }
 
 
 
