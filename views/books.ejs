@@ -9,10 +9,10 @@
 
   <!-- display books -->
   <div class="container">
-    <h1>books</h1>
     <a href="/" type="button" class="btn btn-primary">Home</a>
 
       <div class="jumbotron" ng-repeat="book in books | orderBy: 'title'">
+        <h1>books</h1>
           <div class="media">
               <div class="media-heading">
                   <h1><div class="title "><span>{{book.title}} </span></div></h1>

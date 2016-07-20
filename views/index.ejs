@@ -5,6 +5,8 @@
   <% include ./header %>
 
 </head>
+
+<div class="container">
       <div class="row">
           <div class="col-md-6">
               <div class="card">
@@ -35,6 +37,8 @@
     <a href="/books" class="pull-right btn btn-info" ng-if="showMe"  role="button"><i class="fa fa-book" aria-hidden="true"></i> View Books</a>
 
   </div>
+</div>
+
 
   <!-- add books -->
   <form name="newBooks" ng-if="hideForm" class="my-form" action="/books" method="POST" ng-hide="newBooks.$submitted" novalidate>
