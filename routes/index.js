@@ -6,25 +6,25 @@ var bodyParser = require( 'body-parser' );
 
 
 
-router.get( '/', function( req, res, next ) {
-	knex( 'books' ).select().then( function( result, err ) {
+router.get( '/', function ( req, res, next ) {
+	knex( 'books' ).select().then( function ( result, err ) {
 		res.render( 'index' );
 	} );
 } );
-
-router.get( '/books', function( req, res, next ) {
-	knex( 'books' ).select().then( function( result, err ) {
-		res.render( 'books' );
-	} );
-} );
-
-router.get( '/authors', function( req, res, next ) {
-	knex( 'authors' ).select().then( function( result, err ) {
-		res.render( 'authors' );
-	} );
-} );
-
-
+//
+// router.get( '/books', function( req, res, next ) {
+// 	knex( 'books' ).select().then( function( result, err ) {
+// 		res.render( 'books' );
+// 	} );
+// } );
+//
+// router.get( '/authors', function( req, res, next ) {
+// 	knex( 'authors' ).select().then( function( result, err ) {
+// 		res.render( 'authors' );
+// 	} );
+// } );
+//
+//
 
 
 module.exports = router;

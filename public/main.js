@@ -1,4 +1,17 @@
-var app = angular.module( "library", [ 'ngAnimate', 'ngResource' ] );
+var app = angular.module( "library", [ 'ngAnimate', 'ngRoute', 'ngResource' ] );
+
+app.config( function ( $routeProvider ) {
+	$routeProvider.when( '/', {
+		templateUrl: 'routes/index.ejs',
+		controller: 'control'
+	} )
+} )
+
+app.controller( 'headerController', function ( $scope ) {
+	$scope.view = {};
+	$scope.view.message = "header here"
+	console.log( "header header" );
+} )
 
 app.controller( 'control', function ( $scope, $http ) {
 	$scope.library = {};
@@ -72,11 +85,9 @@ app.controller( 'control', function ( $scope, $http ) {
 		console.log( "new authors here yo!" )
 	}
 
-
-
 	$http( {
 		method: "GET",
-		url: '/',
+		url: '/books',
 		// params: {
 		// 	book_id: book.id,
 		// 	book_title: book.title
@@ -91,41 +102,89 @@ app.controller( 'control', function ( $scope, $http ) {
 			// 	description: book.description,
 			// 	comments: book.comments
 			// }
+			console.log( response );
 			console.log( 'succes' );
 		},
 		function err( response ) {
 			console.log( "Error" );
 		} );
-	// ================================
-	// var data = book;
-	// var data = {
-	// 	// book_id: data.id,
-	// 	title: data.title,
-	// 	author: data.author,
-	// 	img: data.img,
-	// 	genre: data.genre,
-	// 	description: data.description,
-	// 	comments: data.comments
-	// }
+
+
+
+
+	// $http( {
+	// 	method: "GET",
+	// 	url: '/',
+	// 	// params: {
+	// 	// 	book_id: book.id,
+	// 	// 	book_title: book.title
+	// 	// }
+	// } ).then( function mySucces( response ) {
+	// 		// var books = books;
+	// 		// var books = {
+	// 		// 	title: book.title,
+	// 		// 	author: book.author,
+	// 		// 	img: book.img,
+	// 		// 	genre: book.genre,
+	// 		// 	description: book.description,
+	// 		// 	comments: book.comments
+	// 		// }
+	// 		console.log( 'succes' );
+	// 	},
+	// 	function err( response ) {
+	// 		console.log( "Error" );
+	// 	} );
+	// // ================================
+	// // var data = book;
+	// // var data = {
+	// // 	// book_id: data.id,
+	// // 	title: data.title,
+	// // 	author: data.author,
+	// // 	img: data.img,
+	// // 	genre: data.genre,
+	// // 	description: data.description,
+	// // 	comments: data.comments
+	// // }
+	// //
+	// // var config = {
+	// // 	params: data,
+	// // 	headers: {
+	// // 		'Accept': '/'
+	// // 	}
+	// // };
+	// // ================================
 	//
-	// var config = {
-	// 	params: data,
-	// 	headers: {
-	// 		'Accept': '/'
-	// 	}
-	// };
-	// ================================
-
-	$http.get( '/' ).then( function mySucces( response ) {
-		// $scope.books = books;
-		console.log( "getting http" );
-	} )
-
-	$http.post( '/' ).then( function mySucces( response ) {
-		// $scope.books = books;
-		console.log( "posting http!" );
-	} );
-
-
+	// $http.get( '/' ).then( function mySucces( response ) {
+	// 	// $scope.books = books;
+	// 	console.log( "getting http" );
+	// } )
+	//
+	// // var req = {
+	// // 	method: 'POST',
+	// // 	url: '/books',
+	// // 	headers: {
+	// // 		'Content-Type': undefined
+	// // 	},
+	// // 	data: {
+	// // 		test: 'test'
+	// // 	}
+	// // }
+	//
+	//
+	// $http( {
+	// 	method: "POST",
+	// 	url: '/books',
+	// 	// params: {
+	// 	// 	book_id: book.id,
+	// 	// 	book_title: book.title
+	// 	// }
+	// } ).then( function mySucces( response ) {
+	// 	console.log( "testing post" );
+	// } );
+	//
+	// $http.post( '/' ).then( function mySucces( response ) {
+	// 	// $scope.books = books;
+	// 	console.log( "posting http!" );
+	// } );
 
 } );
