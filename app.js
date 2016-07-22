@@ -24,8 +24,8 @@ app.use( methodOverride( '_method' ) );
 
 
 app.use( '/', routes );
-// app.use( '/books', books );
-// app.use( '/authors', authors );
+app.use( '/authors', authors );
+app.use( '/books', books );
 
 
 

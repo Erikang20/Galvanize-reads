@@ -1,6 +1,7 @@
 var app = angular.module( "myApp", [ 'ngRoute' ] );
 
-var reset = function () {
+function reset( something ) {
+
 	$scope.library.title = null;
 	$scope.library.author = null;
 	$scope.library.img = null;
@@ -9,6 +10,7 @@ var reset = function () {
 
 	console.log( "this is clean!" );
 }
+
 
 app.config( function ( $routeProvider ) {
 	$routeProvider.when( '/', {
@@ -91,6 +93,7 @@ app.controller( 'headerController', function ( $scope, $http ) {
 
 	$http.get( '/' ).then( function mySucces( response ) {
 		// 	// $scope.books = books;
+		console.log( response );
 		console.log( "getting http" );
 	} )
 
