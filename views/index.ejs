@@ -2,15 +2,31 @@
 <html lang="en" ng-app="myApp">
   <head>
     <meta charset="utf-8">
-    <title>Library</title>
+
+    <!-- movile friendly -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Books and Authors</title>
+
+    <%# Angularjs%>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular-route.js"></script>
 
+    <!-- jquery -->
+    <script src="https://code.jquery.com/jquery-2.2.3.min.js" integrity="sha256-a23g1Nt4dtEYOj7bR+vTu7+T8VP13humZFBJNIYoEJo=" crossorigin="anonymous"></script>
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" charset="utf-8"></script>
+    <!-- fontawesome -->
+    <script src="https://use.fontawesome.com/405a0adae2.js"></script>
+
     <script src="/main.js"></script>
+    <link rel="stylesheet" href="/style.css">
+
   </head>
+
   <body>
- <h1>home here </h1>
  <div ng-view></div>
+ <h1>home here </h1>
 
 
   </body>
