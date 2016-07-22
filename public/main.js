@@ -77,11 +77,12 @@ app.controller( 'authorsController', function ( $scope, $http ) {
 		console.log( "showPerson function here" );
 	}
 
-	$http.get( '/#/authors' ).then( function mySucces( response ) {
+	$http.get( '/authors' ).then( function mySucces( response ) {
 		$scope.view.response = response.authors;
 		// knex( 'authors' ).select().then( function ( result, err ) {
 		// res.json( '/authors' )
-		console.log( response.authors )
+		console.log( $scope.view.response )
+			// } )
 	} )
 
 	$http.post( '/authors' ).then( function mySucces( response ) {

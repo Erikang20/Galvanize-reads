@@ -48,7 +48,9 @@
 
 
     <!-- display authors -->
-    <div class="jumbotron" ng-repeat="author in authors | orderBy:'fullName'">
+    <div class="jumbotron" ng-repeat="author in view.response | orderBy:'full_name'">
+
+        <h1>testing authors here</h1>
         <div class="media">
             <div class="media-heading">
                 <h1><div class="fullName "><span>{{author.fullName}} </span></div></h1>

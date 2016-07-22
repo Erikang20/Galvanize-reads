@@ -23,7 +23,7 @@ router.post( '/', function ( req, res, next ) {
 		img: author.img,
 		biography: author.biography
 	} ).then( function ( response, err ) {
-		res.json( 'authors' )
+		res.json( '/authors' )
 		console.log( "json authors here" );
 	} )
 } )
