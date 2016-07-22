@@ -78,7 +78,7 @@ app.controller( 'authorsController', function ( $scope ) {
 
 
 
-app.controller( 'headerController', function ( $scope ) {
+app.controller( 'headerController', function ( $scope, $http ) {
 	$scope.view = {};
 	$scope.library = {};
 	$scope.view.message = "header here"
@@ -86,35 +86,20 @@ app.controller( 'headerController', function ( $scope ) {
 	$scope.author = [];
 	$scope.authors = [];
 	$scope.reverse = true;
-	console.log( "header header" );
+	console.log( "home page reporting" );
+
+
+	$http.get( '/' ).then( function mySucces( response ) {
+		// 	// $scope.books = books;
+		console.log( "getting http" );
+	} )
+
+	// $http.post( '/books' ).then( function mySucces( response ) {
+	// 	// 	// $scope.books = books;
+	// 	console.log( "posting http!" );
+	// } );
 
 } );
-
-//
-// 	$http( {
-// 		method: "GET",
-// 		url: '/books',
-// 		// params: {
-// 		// 	book_id: book.id,
-// 		// 	book_title: book.title
-// 		// }
-// 	} ).then( function mySucces( response ) {
-// 			// var books = books;
-// 			// var books = {
-// 			// 	title: book.title,
-// 			// 	author: book.author,
-// 			// 	img: book.img,
-// 			// 	genre: book.genre,
-// 			// 	description: book.description,
-// 			// 	comments: book.comments
-// 			// }
-// 			console.log( response );
-// 			console.log( 'succes' );
-// 		},
-// 		function err( response ) {
-// 			console.log( "Error" );
-// 		} );
-//
 
 
 
@@ -152,31 +137,10 @@ app.controller( 'headerController', function ( $scope ) {
 // // 	comments: data.comments
 // // }
 // //
-// // var config = {
-// // 	params: data,
-// // 	headers: {
-// // 		'Accept': '/'
-// // 	}
-// // };
 // // ================================
 //
-// $http.get( '/' ).then( function mySucces( response ) {
-// 	// $scope.books = books;
-// 	console.log( "getting http" );
-// } )
 //
-// // var req = {
-// // 	method: 'POST',
-// // 	url: '/books',
-// // 	headers: {
-// // 		'Content-Type': undefined
-// // 	},
-// // 	data: {
-// // 		test: 'test'
-// // 	}
-// // }
-//
-//
+
 // $http( {
 // 	method: "POST",
 // 	url: '/books',
@@ -188,9 +152,6 @@ app.controller( 'headerController', function ( $scope ) {
 // 	console.log( "testing post" );
 // } );
 //
-// $http.post( '/' ).then( function mySucces( response ) {
-// 	// $scope.books = books;
-// 	console.log( "posting http!" );
-// } );
+//
 //
 // } );
