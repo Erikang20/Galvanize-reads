@@ -22,6 +22,12 @@ app.controller( 'booksController', function ( $scope ) {
 
 } )
 
+app.controller( 'authorsController', function ( $scope ) {
+	$scope.view = {};
+	$scope.authors = [];
+	$scope.authors.message = "testing authors aqui"
+} )
+
 
 
 app.controller( 'headerController', function ( $scope ) {
