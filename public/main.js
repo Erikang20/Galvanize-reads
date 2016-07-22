@@ -1,5 +1,15 @@
 var app = angular.module( "myApp", [ 'ngRoute' ] );
 
+var reset = function () {
+	$scope.library.title = null;
+	$scope.library.author = null;
+	$scope.library.img = null;
+	$scope.library.description = null;
+	$scope.library.newBooks = false;
+
+	console.log( "this is clean!" );
+}
+
 app.config( function ( $routeProvider ) {
 	$routeProvider.when( '/', {
 			templateUrl: 'partials/home.html',
@@ -17,62 +27,8 @@ app.config( function ( $routeProvider ) {
 
 app.controller( 'booksController', function ( $scope ) {
 	$scope.view = {};
-	$scope.books = [];
-	$scope.books.message = "testing books here yo"
-
-} )
-
-app.controller( 'authorsController', function ( $scope ) {
-	$scope.view = {};
-	$scope.authors = [];
-	$scope.authors.message = "testing authors aqui"
-} )
-
-
-
-app.controller( 'headerController', function ( $scope ) {
-	$scope.view = {};
-	$scope.library = {};
-	$scope.view.message = "header here"
 	$scope.book = [];
 	$scope.books = [];
-	$scope.author = [];
-	$scope.authors = [];
-	$scope.reverse = true;
-	console.log( "header header" );
-
-	$scope.hide = function () {
-		$scope.showMe = !$scope.showMe;
-		console.log( "hiding" );
-	}
-
-	$scope.hideMe = function () {
-		$scope.hideForm = !$scope.hideForm;
-		console.log( "hideMe function here" );
-	}
-
-	// ================================================
-
-	$scope.showME = function () {
-		$scope.hideME = !$scope.hideME;
-		console.log( "showME function here" );
-	}
-
-	$scope.showPerson = function () {
-		$scope.showAuthor = !$scope.showAuthor;
-		console.log( "showPerson function here" );
-	}
-
-
-	var reset = function () {
-		$scope.library.title = null;
-		$scope.library.author = null;
-		$scope.library.img = null;
-		$scope.library.description = null;
-		$scope.library.newBooks = false;
-
-		console.log( "this is clean!" );
-	}
 
 	$scope.addBook = function () {
 		var newBook = {};
@@ -89,6 +45,13 @@ app.controller( 'headerController', function ( $scope ) {
 		console.log( "add a new book here!" );
 	}
 
+
+} )
+
+app.controller( 'authorsController', function ( $scope ) {
+	$scope.view = {};
+	$scope.authors = [];
+
 	$scope.addAuthor = function () {
 		var newAuthor = {};
 		newAuthor.fullName = $scope.author.fullName;
@@ -101,6 +64,33 @@ app.controller( 'headerController', function ( $scope ) {
 		$scope.authors.push( newAuthor );
 		console.log( "new authors here yo!" )
 	}
+
+	$scope.showPerson = function () {
+		$scope.showAuthor = !$scope.showAuthor;
+		console.log( "showPerson function here" );
+	}
+} )
+
+
+
+app.controller( 'headerController', function ( $scope ) {
+	$scope.view = {};
+	$scope.library = {};
+	$scope.view.message = "header here"
+
+	$scope.author = [];
+	$scope.authors = [];
+	$scope.reverse = true;
+	console.log( "header header" );
+
+	$scope.hide = function () {
+		$scope.showMe = !$scope.showMe;
+		console.log( "hiding" );
+	}
+
+
+
+
 } );
 
 //

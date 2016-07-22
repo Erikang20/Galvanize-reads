@@ -1,9 +1,10 @@
-<h1>{{authors.message}}</h1>
-
 <a href="/#/" type="button" class="btn btn-primary">Home</a>
 
+<a href="#authors" class="pull-right btn btn-success" ng-click="showPerson()" role="button"><i class="fa fa-plus-circle" aria-hidden="true"></i> New Author</a>
+
+
 <!-- newAuthor -->
-<form name="newAuthor" class="my-form" action="/authors" method="POST" ng-hide="newAuthor.$submitted" novalidate>
+<form name="newAuthor" ng-if="showAuthor" class="my-form" action="/authors" method="POST" ng-hide="newAuthor.$submitted" novalidate>
     <div class="form-group">
 
         <label for="fullName">Full Name: </label>
@@ -29,7 +30,7 @@
         <!-- <span class="error" ng-show="userForm.description.$error.maxlength">The description can't be longer than 200 characters </span> -->
 
         <label for="books">Books: </label>
-        <!-- <input type="text" class="form-control" name="books" id="books" ng-model="author.books" placeholder="Books" required> -->
+        <input type="text" class="form-control" name="books" id="books" ng-model="author.books" placeholder="Books" required>
         <form action="/books" method="POST">
 
             <button ng-click="addBook()" class="btn btn-primary" type="submit" ng-disabled="newBooks.$pristine">Submit Post</button>
