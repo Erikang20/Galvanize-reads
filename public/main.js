@@ -2,10 +2,27 @@ var app = angular.module( "myApp", [ 'ngRoute' ] );
 
 app.config( function ( $routeProvider ) {
 	$routeProvider.when( '/', {
-		templateUrl: 'partials/home.html',
-		controller: 'headerController'
-	} )
+			templateUrl: 'partials/home.html',
+			controller: 'headerController'
+		} )
+		.when( '/books', {
+			templateUrl: 'partials/books.html',
+			controller: 'booksController'
+		} )
+		.when( '/authors', {
+			templateUrl: 'partials/authors.html',
+			controller: 'authorsController'
+		} )
 } )
+
+app.controller( 'booksController', function ( $scope ) {
+	$scope.view = {};
+	$scope.books = [];
+	$scope.books.message = "testing books here yo"
+
+} )
+
+
 
 app.controller( 'headerController', function ( $scope ) {
 	$scope.view = {};
