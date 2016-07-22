@@ -1,4 +1,4 @@
-var app = angular.module( "library", [ 'ngAnimate', 'ngRoute', 'ngResource' ] );
+var app = angular.module( "myApp", [ 'ngRoute' ] );
 
 app.config( function ( $routeProvider ) {
 	$routeProvider.when( '/', {
@@ -186,5 +186,5 @@ app.controller( 'headerController', function ( $scope ) {
 // 	// $scope.books = books;
 // 	console.log( "posting http!" );
 // } );
-// 
+//
 // } );
