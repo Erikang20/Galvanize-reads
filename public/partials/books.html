@@ -1,11 +1,10 @@
 <a href="/#/" type="button" class="btn btn-primary">Home</a>
 
 <!-- button add new book -->
-<a href="#" class="pull-right btn btn-success" ng-click="" role="button"><i class="fa fa-plus-circle" aria-hidden="true"></i> New Book</a>
-<a href="#" class="pull-right btn btn-info" role="button"><i class="fa fa-book" aria-hidden="true"></i> View Books</a>
+<a href="#books" class="pull-right btn btn-success" ng-click="hide()" role="button"><i class="fa fa-plus-circle" aria-hidden="true"></i> New Book</a>
 
 <!-- add books -->
-<form name="newBooks" class="my-form" action="/" method="POST" novalidate>
+<form name="newBooks" ng-if="showMe" class="my-form" action="/" method="POST" novalidate>
     <div class="form-group">
 
         <label for="title">Title: </label>

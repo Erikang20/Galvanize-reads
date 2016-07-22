@@ -30,6 +30,12 @@ app.controller( 'booksController', function ( $scope ) {
 	$scope.book = [];
 	$scope.books = [];
 
+	$scope.hide = function () {
+		$scope.showMe = !$scope.showMe;
+		console.log( "hiding" );
+	}
+
+
 	$scope.addBook = function () {
 		var newBook = {};
 		newBook.title = $scope.book.title;
@@ -44,7 +50,6 @@ app.controller( 'booksController', function ( $scope ) {
 
 		console.log( "add a new book here!" );
 	}
-
 
 } )
 
@@ -82,14 +87,6 @@ app.controller( 'headerController', function ( $scope ) {
 	$scope.authors = [];
 	$scope.reverse = true;
 	console.log( "header header" );
-
-	$scope.hide = function () {
-		$scope.showMe = !$scope.showMe;
-		console.log( "hiding" );
-	}
-
-
-
 
 } );
 
