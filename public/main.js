@@ -78,10 +78,10 @@ app.controller( 'authorsController', function ( $scope, $http ) {
 	}
 
 	$http.get( '/authors' ).then( function mySucces( response ) {
-		$scope.view.response = response.authors;
+		$scope.view.authors = response;
 		// knex( 'authors' ).select().then( function ( result, err ) {
 		// res.json( '/authors' )
-		console.log( $scope.view.response )
+		console.log( $scope.view.authors )
 			// } )
 	} )
 
