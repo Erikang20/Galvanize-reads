@@ -61,7 +61,7 @@ app.controller( 'authorsController', function ( $scope, $http ) {
 
 	$scope.addAuthor = function () {
 		var newAuthor = {};
-		newAuthor.fullName = $scope.author.fullName;
+		newAuthor.full_name = $scope.author.full_name;
 		newAuthor.dob = $scope.author.dob;
 		newAuthor.country = $scope.author.country;
 		newAuthor.img = $scope.author.img;

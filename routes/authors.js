@@ -17,7 +17,7 @@ router.post( '/', function ( req, res, next ) {
 	var author = req.body;
 	console.log( author );
 	knex( 'authors' ).insert( {
-		fullName: author.fullName,
+		full_name: author.full_name,
 		dob: author.dob,
 		country: author.country,
 		img: author.img,
