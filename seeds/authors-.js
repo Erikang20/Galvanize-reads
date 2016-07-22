@@ -1,16 +1,16 @@
-exports.seed = function( knex, Promise ) {
+exports.seed = function ( knex, Promise ) {
 	// Deletes ALL existing entries
 	return knex( 'book_author' ).del()
-		.then( function() {
+		.then( function () {
 			return knex( 'authors' ).del()
 		} )
-		.then( function() {
+		.then( function () {
 			console.log( "authors" );
 			return Promise.all( [
         // Inserts seed entries
         knex( 'authors' ).insert( {
 					id: 1,
-					fullName: 'Joanne Rowling',
+					full_name: 'Joanne Rowling',
 					dob: "July 31, 1965",
 					country: 'United Kingdom',
 					img: 'http://i.telegraph.co.uk/multimedia/archive/02617/jk_2617100b.jpg',
@@ -18,7 +18,7 @@ exports.seed = function( knex, Promise ) {
 				} ),
         knex( 'authors' ).insert( {
 					id: 2,
-					fullName: 'Victor Hugo',
+					full_name: 'Victor Hugo',
 					dob: 'February 26, 1802',
 					country: 'France',
 					img: 'https://upload.wikimedia.org/wikipedia/commons/e/e6/Victor_Hugo_by_%C3%89tienne_Carjat_1876_-_full.jpg',
@@ -26,7 +26,7 @@ exports.seed = function( knex, Promise ) {
 				} ),
         knex( 'authors' ).insert( {
 					id: 3,
-					fullName: 'Gabriel Garcia Marquez',
+					full_name: 'Gabriel Garcia Marquez',
 					dob: 'March 6, 1927',
 					country: 'Colombia',
 					img: 'http://jontaplin.com/wp-content/uploads/2014/04/Marquez.jpg',

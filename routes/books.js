@@ -13,27 +13,27 @@ router.get( '/books', function ( req, res ) {
 } )
 
 //
-// router.post( '/', function ( req, res ) {
-// 	var book = req.body;
-// 	console.log( book );
-// 	knex( 'books' ).insert( {
-// 		title: book.title,
-// 		// author: req.author,
-// 		img: book.img,
-// 		genre: book.genre,
-// 		description: book.description,
-// 		comments: book.comments
-// 	} ).then( function ( result, err ) {
-// 		if ( err ) {
-// 			console.log( err );
-// 		} else {
-// 			console.log( "result:" +
-// 				result );
-// 		}
-// 		res.render( 'books' );
-// 	} );
-// 	console.log( "working books here" );
-// } );
-//
+router.post( '/', function ( req, res ) {
+	var book = req.body;
+	console.log( book );
+	knex( 'books' ).insert( {
+		title: book.title,
+		// author: req.author,
+		img: book.img,
+		genre: book.genre,
+		description: book.description,
+		comments: book.comments
+	} ).then( function ( result, err ) {
+		if ( err ) {
+			console.log( err );
+		} else {
+			console.log( "result:" +
+				result );
+		}
+		res.render( 'books' );
+	} );
+	console.log( "working books here" );
+} );
+
 
 module.exports = router;

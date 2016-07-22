@@ -1,8 +1,8 @@
-exports.up = function( knex, Promise ) {
+exports.up = function ( knex, Promise ) {
 
-	return knex.schema.createTable( 'authors', function( table ) {
+	return knex.schema.createTable( 'authors', function ( table ) {
 		table.increments( 'id' ).primary();
-		table.string( 'fullName' );
+		table.string( 'full_name' );
 		table.date( 'dob' );
 		table.string( 'country' );
 		table.string( 'img' ).defaultTo( '' );
@@ -11,6 +11,6 @@ exports.up = function( knex, Promise ) {
 
 };
 
-exports.down = function( knex, Promise ) {
+exports.down = function ( knex, Promise ) {
 	return knex.schema.dropTable( 'authors' );
 };

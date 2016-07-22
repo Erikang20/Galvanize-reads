@@ -78,11 +78,14 @@ app.controller( 'authorsController', function ( $scope, $http ) {
 	}
 
 	$http.get( '/#/authors' ).then( function mySucces( response ) {
-		// $scope.view.response = 'authors';
-		knex( 'authors' ).select().then( function ( result, err ) {
-			res.json( '/authors' )
-			console.log( "authors here" );
-		} )
+		$scope.view.response = response.authors;
+		// knex( 'authors' ).select().then( function ( result, err ) {
+		// res.json( '/authors' )
+		console.log( response.authors )
+	} )
+
+	$http.post( '/authors' ).then( function mySucces( response ) {
+		console.log( "posting authors" );
 	} )
 } )
 
