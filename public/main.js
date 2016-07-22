@@ -55,7 +55,7 @@ app.controller( 'booksController', function ( $scope ) {
 
 } )
 
-app.controller( 'authorsController', function ( $scope ) {
+app.controller( 'authorsController', function ( $scope, $http ) {
 	$scope.view = {};
 	$scope.authors = [];
 
@@ -76,6 +76,14 @@ app.controller( 'authorsController', function ( $scope ) {
 		$scope.showAuthor = !$scope.showAuthor;
 		console.log( "showPerson function here" );
 	}
+
+	$http.get( '/#/authors' ).then( function mySucces( response ) {
+		// $scope.view.response = 'authors';
+		knex( 'authors' ).select().then( function ( result, err ) {
+			res.json( '/authors' )
+			console.log( "authors here" );
+		} )
+	} )
 } )
 
 
@@ -88,13 +96,13 @@ app.controller( 'headerController', function ( $scope, $http ) {
 	$scope.author = [];
 	$scope.authors = [];
 	$scope.reverse = true;
-	console.log( "home page reporting" );
+	console.log( "heade Controller reporting" );
 
 
 	$http.get( '/' ).then( function mySucces( response ) {
-		// 	// $scope.books = books;
-		console.log( response );
-		console.log( "getting http" );
+		// $scope.books = books;
+		// console.log( response );
+		console.log( "Home page here" );
 	} )
 
 	// $http.post( '/books' ).then( function mySucces( response ) {
